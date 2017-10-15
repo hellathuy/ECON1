@@ -48,6 +48,8 @@ int main() {
 }
 
 void PED() {
+	int change;
+	float average;
 	float percentageChangeQD;
 	float percentageChangeP;
 	float PED;
@@ -68,7 +70,9 @@ void PED() {
 	scanf("%f", &P2);
 
 	//calculating percentage change in quantity demanded
-	percentageChangeQD = (Q2 - Q1)/((Q2 + Q1)/2);
+	change = Q2 - Q1;
+	average = (Q2 + Q1)/2;
+	percentageChangeQD = change/average;
 
 	//calculating percentage change in price
 	percentageChangeP = (P2 - P1)/((P2 + P1)/2);
@@ -78,8 +82,7 @@ void PED() {
 
 	printf("\nPercentage Change in Quantity Demanded: %.2f%%", percentageChangeQD * 100);
 	printf("\nPercentage Change in Price: %.2f%%", percentageChangeP * 100);
-	printf("\nPrice Elasticity of Demand: %.2f", fabs(PED * 100));
-
+	printf("\nPrice Elasticity of Demand: %.2f", fabs(PED));
 }
 
 void PES() {
