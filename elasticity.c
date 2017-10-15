@@ -86,38 +86,41 @@ void PED() {
 }
 
 void PES() {
+	int change;
+	float average;
 	float percentageChangeQS;
 	float percentageChangeP;
 	float PES;
 
-	printf("CALCULATING PRICE ELASTICITY OF SUPPLY:\n");
+	printf("\nCALCULATING PRICE ELASTICITY OF SUPPLY:\n");
 
 	//receiving input values
-	printf("What is the initial quantity supplied? ");
+	printf("\nWhat is the initial quantity supplied? ");
 	scanf("%d", &Q1);
 
-	printf("\nWhat is the new quantity supplied? ");
+	printf("What is the new quantity supplied? ");
 	scanf("%d", &Q2);
 
-	printf("\nWhat is the initial price? ");
+	printf("What is the initial price? ");
 	scanf("%f", &P1);
 
-	printf("\nWhat is the new price? ");
+	printf("What is the new price? ");
 	scanf("%f", &P2);
 
-	//calculating percentage change in quantity supplied
-	percentageChangeQS = (Q2 - Q1)/((Q2 + Q1)/2);
+	//calculating percentage change in quantity demanded
+	change = Q2 - Q1;
+	average = (Q2 + Q1)/2;
+	percentageChangeQS = change/average;
 
 	//calculating percentage change in price
 	percentageChangeP = (P2 - P1)/((P2 + P1)/2);
 
-	//calculating PES
+	//calculating PED
 	PES = percentageChangeQS / percentageChangeP;
 
-	printf("\nPercentage Change in Quantity Supplied: %.2f", percentageChangeQS);
-	printf("\nPercentage Change in Price: %.2f", percentageChangeP);
-	printf("\nPrice Elasticity of Supply: %.2f", PES);
-
+	printf("\nPercentage Change in Quantity Supplied: %.2f%%", percentageChangeQS * 100);
+	printf("\nPercentage Change in Price: %.2f%%", percentageChangeP * 100);
+	printf("\nPrice Elasticity of Supply: %.2f\n", fabs(PES));
 }
 
 void IED() {
