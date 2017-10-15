@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 void PED();
 void PES();
@@ -24,19 +25,19 @@ int main() {
 		scanf("%d", &option);
 
 	switch(option) {
-		case '1':
+		case 1:
 			PED();
 			break;
 
-		case '2':
+		case 2:
 			PES();
 			break;
 
-		case '3':
+		case 3:
 			IED();
 			break;
 
-		case '4':
+		case 4:
 			CPED();
 			break;
 
@@ -75,9 +76,9 @@ void PED() {
 	//calculating PED
 	PED = percentageChangeQD / percentageChangeP;
 
-	printf("\nPercentage Change in Quantity Demanded: %.2f", percentageChangeQD);
-	printf("\nPercentage Change in Price: %.2f", percentageChangeP);
-	printf("\nPrice Elasticity of Demand: %.2f", PED);
+	printf("\nPercentage Change in Quantity Demanded: %.2f%%", percentageChangeQD * 100);
+	printf("\nPercentage Change in Price: %.2f%%", percentageChangeP * 100);
+	printf("\nPrice Elasticity of Demand: %.2f", fabs(PED * 100));
 
 }
 
