@@ -54,19 +54,19 @@ void PED() {
 	float percentageChangeP;
 	float PED;
 
-	printf("CALCULATING PRICE ELASTICITY OF DEMAND:\n");
+	printf("\nCALCULATING PRICE ELASTICITY OF DEMAND:\n");
 
 	//receiving input values
-	printf("What is the initial quantity demanded? ");
+	printf("\nWhat is the initial quantity demanded? ");
 	scanf("%d", &Q1);
 
-	printf("\nWhat is the new quantity demanded? ");
+	printf("What is the new quantity demanded? ");
 	scanf("%d", &Q2);
 
-	printf("\nWhat is the initial price? ");
+	printf("What is the initial price? ");
 	scanf("%f", &P1);
 
-	printf("\nWhat is the new price? ");
+	printf("What is the new price? ");
 	scanf("%f", &P2);
 
 	//calculating percentage change in quantity demanded
@@ -82,7 +82,7 @@ void PED() {
 
 	printf("\nPercentage Change in Quantity Demanded: %.2f%%", percentageChangeQD * 100);
 	printf("\nPercentage Change in Price: %.2f%%", percentageChangeP * 100);
-	printf("\nPrice Elasticity of Demand: %.2f", fabs(PED));
+	printf("\nPrice Elasticity of Demand: %.2f\n", fabs(PED));
 }
 
 void PES() {
